@@ -6,6 +6,6 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/AEgan/ESPGem"
 
   gem.name          = "ESPGem"
-  gem.require_paths = ["lib"]
+  gem.require_paths = ["lib", "headlines"]
   gem.version       = "0.0.0"
 end

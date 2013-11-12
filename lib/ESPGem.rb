@@ -1,3 +1,2 @@
-module ESPGem
-	
-end
+# track the version
+require 'ESPGem/version'

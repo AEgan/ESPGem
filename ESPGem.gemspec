@@ -7,5 +7,5 @@ Gem::Specification.new do |gem|
 
   gem.name          = "ESPGem"
   gem.require_paths = ["lib"]
-  gem.version       = "0.0.0"
+  gem.version       = "0.0.1"
 end

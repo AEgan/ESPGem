@@ -2,8 +2,8 @@
 module ESPGem
 	class Headlines
 
-		def get_headlines(api_key)
-			puts 'here, plus your API key is ' + api_key
+		def self.get_headlines(api_key)
+			api_key
 		end
 
 	end

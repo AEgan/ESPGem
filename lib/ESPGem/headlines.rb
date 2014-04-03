@@ -7,7 +7,8 @@ module ESPGem
 		# gets the headlines for the sport specified
 		# for now must provide the sport and league, and I'm not checking for errors LOL
 		def self.get_headlines(options = {})
-			request_url = "http://api.espn.com/v1/sports/#{options[:sport]}/#{options[:league]}?apikey=#{@api_key}"
+			api_key = ESPGem::Auth.api_key
+			request_url = "http://api.espn.com/v1/sports/#{options[:sport]}/#{options[:league]}?apikey=#{api_key}"
 			uri = URI(request_url)
 			res = Net::HTTP.get(uri)
 			JSON.parse(res)

@@ -14,5 +14,14 @@ module ESPGem
 			JSON.parse(res)
 		end
 
+		# get the top headlines from ESPN
+		def self.get_top_headlines
+			api_key = ESPGem::Auth.api_key
+			request_url = "http://api.espn.com/v1/sports/news/headlines/top?apikey=#{api_key}"
+			uri = URI(request_url)
+			res = Net::HTTP.get(uri)
+			JSON.parse(res)
+		end
+
 	end
 end

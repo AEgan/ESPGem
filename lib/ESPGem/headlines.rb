@@ -23,5 +23,15 @@ module ESPGem
 			JSON.parse(res)
 		end
 
+		# so I should look to rename this, but for now this is a GET for
+		# http://api.espn.com/v1/sports/news/headlines, the first specifies a sport and league
+		def self.get_all_headlines
+			api_key = ESPGem::Auth.api_key
+			request_url = "http://api.espn.com/v1/sports/news/headlines?apikey=#{api_key}"
+			uri = URI(request_url)
+			res = Net::HTTP.get(uri)
+			JSON.parse(res)
+		end
+
 	end
 end

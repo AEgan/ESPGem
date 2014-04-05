@@ -44,5 +44,16 @@ describe ESPGem do
     res['headlines'][0].should be_a_kind_of(Hash)
   end
 
+  # tests the get all headlines method
+  # however no real way to check from the tests that it's a different call
+  # than the one above... oh well
+  it 'has a way to get the web headlines of the day from ESPN' do
+    ESPGem::Auth.api_key=('w4v8qt4yachkcugkveemsxem')
+    res = ESPGem::Headlines.get_all_headlines
+    res.should be_a_kind_of(Hash)
+    expect(res['status']).to eq('success')
+    res['headlines'].should be_a_kind_of(Array)
+    res['headlines'][0].should be_a_kind_of(Hash)
+  end
 
 end

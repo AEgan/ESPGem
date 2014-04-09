@@ -56,4 +56,13 @@ describe ESPGem do
     res['headlines'][0].should be_a_kind_of(Hash)
   end
 
+  # athletes
+  it 'has a way to get all of the athletes given a sport and league' do
+    ESPGem::Auth.api_key=('w4v8qt4yachkcugkveemsxem')
+    options = {sport: "hockey", league: "nhl"}
+    res = ESPGem::Athletes.get_athletes(options)
+    res.should be_a_kind_of(Hash)
+    expect(res['status']).to eq('success')
+  end
+
 end
